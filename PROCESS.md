@@ -22,10 +22,10 @@
         
         > Run the Cucumber test and let it fail
     2. Add the test configuration, and all required dependencies
-    3. Create a class with method to add two number 
+    3. Create a class with the method to add two number 
     4. Add the test cases using MockitoJUnitRunner
     5. Run them, let them fail
-    6. Refactor code and Run the test again,
+    6. Add or refactor code in the WebService class and Run the test again,
     7. Repeat the step until all the tests pass
 
 
