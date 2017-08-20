@@ -39,6 +39,8 @@ mvn verify
 mvn spring-boot:run
 ```
 **HTTP request Example**
+
+*GET - To get the total
 ```
 http://localhost:8080/calculator/add/253683/7653721
 ```
@@ -50,3 +52,6 @@ Prerequisite: Start the springboot application and server
 ```
 mvn clean test
 ```
+### Who do I talk to? ###
+
+For more information Contact: Udit Choudhary at uditchoudhary@gmail.com
