@@ -33,7 +33,7 @@ Following tools and frameworks are used while developing this project:
 2. Go to module **Compute-TDD**
 3. Run command: 
 ```
-mvn verify
+mvn clean test
 ```
 ### Run Server and Application
 1. Open CMD prompt
