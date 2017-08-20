@@ -69,7 +69,7 @@ public class addition {
 
     @Then("^I should get \"([^\"]*)\" exception$")
     public void iShouldGetException(String exceptionMessage) {
-        assertEquals(result,exceptionMessage);
+        assertEquals(exceptionMessage,result);
     }
 
     @Given("^I have three numbers$")
@@ -95,12 +95,12 @@ public class addition {
 
     @Given("^I have a number and a special character$")
     public void iHaveANumberAndASpecialCharacter(){
-        number1 = getRandomNumber();
-        number2 = "!@#$%";
+        number1 = "!@#$%";
+        number2 = getRandomNumber();
     }
 
     @Then("^I should get the same number in response$")
     public void iShouldGetTheSameNumberInResponse()  {
-        assertEquals(result,number1);
+        assertEquals(number1,result);
     }
 }
