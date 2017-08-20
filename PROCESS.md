@@ -7,15 +7,16 @@
     1. RESTFul web service including unit test, and 
     2. Service‘s behaviour test scnearios
 
-2. **Create first module: Compute-BDD**
+2. **Create first module: Compute-BDD** - Acceptance Test
 
     1. Write the feature file – test scenarios (Behaviour of the WebService)
     2. Create the setup to run the test scenario 
     3. Implement the step definition, create required class and interfaces, add required dependencies
     4. Do the required configuration to run it with other frameworks such as springboot
+    5. Run the test scenarios, and let them fail.
 
 
-3. **Create Second module: Compute-TDD**
+3. **Create Second module: Compute-TDD** - Unit Test
 
     1. Create the springboot server and add the controller
         > Start the springboot server 
