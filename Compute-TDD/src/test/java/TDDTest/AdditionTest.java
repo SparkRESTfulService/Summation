@@ -10,6 +10,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.test.context.ContextConfiguration;
 import resources.Utility;
 
+import java.math.BigDecimal;
+
 import static org.junit.Assert.assertEquals;
 
 @ContextConfiguration(classes = {TestConfiguration.class})
@@ -120,26 +122,26 @@ public class AdditionTest extends Utility {
     //Double and Float Scenarios
     @Test
     public void test_add_positive_double() {
-        double num1 = Double.parseDouble(getRandomPositiveDouble());
-        double num2 = Double.parseDouble(getRandomPositiveDouble());
-        String expected = String.valueOf(num1 + num2);
-        String actual = summation.sum(String.valueOf(num1),String.valueOf(num2));
+        BigDecimal bd1 = new BigDecimal(getRandomPositiveDouble());
+        BigDecimal bd2 = new BigDecimal(getRandomPositiveDouble());
+        String expected = String.valueOf(bd1.add(bd2));
+        String actual = summation.sum(String.valueOf(bd1),String.valueOf(bd2));
         assertEquals(expected,actual);
     }
     @Test
     public void test_add_negative_double() {
-        double num1 = Double.parseDouble(getRandomNegativeDouble());
-        double num2 = Double.parseDouble(getRandomNegativeDouble());
-        String expected = String.valueOf(num1 + num2);
-        String actual = summation.sum(String.valueOf(num1),String.valueOf(num2));
+        BigDecimal bd1 = new BigDecimal(getRandomNegativeDouble());
+        BigDecimal bd2 = new BigDecimal(getRandomNegativeDouble());
+        String expected = String.valueOf(bd1.add(bd2));
+        String actual = summation.sum(String.valueOf(bd1),String.valueOf(bd2));
         assertEquals(expected,actual);
     }
     @Test
     public void test_add_positive_and_negative_doubles(){
-        double num1 = Double.parseDouble(getRandomNegativeDouble());
-        double num2 = Double.parseDouble(getRandomPositiveDouble());
-        String expected = String.valueOf(num1 + num2);
-        String actual = summation.sum(String.valueOf(num1),String.valueOf(num2));
+        BigDecimal bd1 = new BigDecimal(getRandomNegativeDouble());
+        BigDecimal bd2 = new BigDecimal(getRandomPositiveDouble());
+        String expected = String.valueOf(bd1.add(bd2));
+        String actual = summation.sum(String.valueOf(bd1),String.valueOf(bd2));
         assertEquals(expected,actual);
     }
     @Test
@@ -161,11 +163,12 @@ public class AdditionTest extends Utility {
     @Test
     public void test_add_integer_and_double() {
         int num1 = Integer.parseInt(getRandomNumber());
-        double num2 = Double.parseDouble(getRandomDouble());
+        BigDecimal bd1 = new BigDecimal(num1);
+        BigDecimal bd2 = new BigDecimal(getRandomDouble());
+        BigDecimal result = bd1.add(bd2);
+        String expected = result.toString();
 
-        String expected = String.valueOf(num1 + num2);
-
-        String actual = summation.sum(String.valueOf(num1),String.valueOf(num2));
+        String actual = summation.sum(String.valueOf(bd1),String.valueOf(bd2));
         assertEquals(expected,actual);
     }
 

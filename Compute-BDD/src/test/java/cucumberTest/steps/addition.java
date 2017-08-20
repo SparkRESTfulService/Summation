@@ -6,13 +6,19 @@ import cucumber.api.java.en.When;
 import org.springframework.context.annotation.PropertySource;
 import resources.Utility;
 
+import java.math.BigDecimal;
+
 import static org.junit.Assert.assertEquals;
 import static resources.Utility.getRandomNumber;
 import static resources.Utility.getRandomString;
 import static resources.Utility.isInt;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 
 @PropertySource("classpath:application.properties")
 public class addition {
+    private static final Log log = LogFactory.getLog(addition.class);
 
     String number1;
     String number2;
@@ -30,6 +36,7 @@ public class addition {
 
     @When("^I request the addition of both$")
     public void iRequestTheAdditionOfBoth() {
+        log.info("integration test call:"+number1+":"+number2);
         this.result = Utility.sendGetRequest(number1,number2);
 
     }
@@ -38,12 +45,15 @@ public class addition {
     public void theResultShouldBeTheTotalOfBoth() {
         Number expected;
             if (!isInt(number1) || !isInt(number2)) {
-                expected = Double.parseDouble(number1) + Double.parseDouble(number2);
+                BigDecimal bd1 = new BigDecimal(number1);
+                BigDecimal bd2 = new BigDecimal(number2);
+                expected = bd1.add(bd2);
 
             } else {
                 expected = Long.parseLong(number1) + Long.parseLong(number2);
 
             }
+           log.info("integration test result:"+expected);
         assertEquals(expected.toString(),result);
     }
 
