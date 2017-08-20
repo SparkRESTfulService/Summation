@@ -25,7 +25,7 @@ Following tools and frameworks are used while developing this project:
 2. Java installed and configured
 3. IDE \*optional
 
-## How do I get setup
+## How do I get set up
 1. Download the repository
 2. Extract it
 ### Perform TDD
