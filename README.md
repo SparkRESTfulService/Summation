@@ -13,8 +13,9 @@ Following tools and frameworks are used while developing this project:
 2. **Project Management Tool**: Maven
 3. **Standalone Rest Framework**: Springboot
 4. **Spring Client**: RestTemplate
-5. **BDD Tool**: Cucumber/Gherkin
-6. **IDE**: IntelliJ Idea
+5. **BDD**: Cucumber/Gherkin
+6. **TDD**: Junit and MockitoJUnitRunner
+7. **IDE**: IntelliJ Idea
 
 ## Prerequisite
 1. Maven installed and configured
