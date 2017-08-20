@@ -1,0 +1,6 @@
+.idea/*
+.idea/**/workspace.xml
+Compute.iml
+Compute-BDD/target/**
+Compute-TDD/targer/**
+
