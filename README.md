@@ -1,7 +1,7 @@
 # Read Me
 This RESTful web service is built using Test Driven Development (TDD) and Behavioural Driven Development (BDD)
 
-[To know the process I followed to develop this WebService, please go to] (PROCESS.MD)
+*To know the process I followed to develop this WebService, please go to (../PROCESS.MD)
 
 ## About the repository
 This repository contains a Maven project which includes:
