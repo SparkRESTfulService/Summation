@@ -11,15 +11,13 @@ public class Summation {
     public String sum (String num1, String num2) throws BadRequestException{
 
         if(isParsable(num1) && isParsable(num2)){
-                Number result;
                 if (!isInt(num1) || !isInt(num2)) {
-                    result = Double.parseDouble(num1) + Double.parseDouble(num2);
+                    double result = Double.parseDouble(num1) + Double.parseDouble(num2);
+                    return String.valueOf(result);
                 } else {
-                    result = Long.parseLong(num1) + Long.parseLong(num2);
-
+                    long result = Long.parseLong(num1) + Long.parseLong(num2);
+                    return String.valueOf(result);
                 }
-                return result.toString();
-
         }
         else {
             throw new BadRequestException("Bad Request","Invalid Argument Exception");

@@ -1,19 +1,11 @@
 package cucumberTest.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.api.java.eo.Do;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.web.client.RestTemplate;
 import resources.Utility;
-import shiver.me.timbers.data.random.RandomStrings;
 
-import java.text.DecimalFormat;
-
-import static org.apache.commons.lang3.math.NumberUtils.isParsable;
 import static org.junit.Assert.assertEquals;
 import static resources.Utility.getRandomNumber;
 import static resources.Utility.getRandomString;
@@ -44,14 +36,15 @@ public class addition {
 
     @Then("^the result should be the total of both$")
     public void theResultShouldBeTheTotalOfBoth() {
-        String expected = "";
+        Number expected;
             if (!isInt(number1) || !isInt(number2)) {
-                expected = String.valueOf(Double.parseDouble(number1) + Double.parseDouble(number2));
+                expected = Double.parseDouble(number1) + Double.parseDouble(number2);
+
             } else {
-                expected = String.valueOf(Long.parseLong(number1) + Long.parseLong(number2));
+                expected = Long.parseLong(number1) + Long.parseLong(number2);
 
             }
-        assertEquals(expected,result);
+        assertEquals(expected.toString(),result);
     }
 
     @Given("^I have one number$")
