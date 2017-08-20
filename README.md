@@ -3,9 +3,9 @@ This RESTful web service is built using Test Driven Development (TDD) and Behavi
 
 ## About the repository
 This repository contains a Maven project which includes:
-### Compute-BDD module
+#### Compute-BDD module
 BDD Scenarios written using Cucumber in Gherkin format
-### Compute-TDD module
+#### Compute-TDD module
 TDD Scenarios written using MockitoJUnitRunner and JUnit
 
 Following tools and frameworks are used while developing this project:
