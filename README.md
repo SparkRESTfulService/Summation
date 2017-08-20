@@ -54,4 +54,4 @@ mvn clean test
 ```
 ### Who do I talk to? ###
 
-For more information Contact: Udit Choudhary at uditchoudhary@gmail.com
+For more information Contact: :email: Udit Choudhary at uditchoudhary@gmail.com
