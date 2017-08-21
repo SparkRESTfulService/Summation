@@ -36,7 +36,6 @@ public class addition {
 
     @When("^I request the addition of both$")
     public void iRequestTheAdditionOfBoth() {
-        log.info("integration test call:"+number1+":"+number2);
         this.result = Utility.sendGetRequest(number1,number2);
 
     }
@@ -53,7 +52,6 @@ public class addition {
                 expected = Long.parseLong(number1) + Long.parseLong(number2);
 
             }
-           log.info("integration test result:"+expected);
         assertEquals(expected.toString(),result);
     }
 

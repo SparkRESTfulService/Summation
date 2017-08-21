@@ -14,12 +14,8 @@ public class SummationService {
 
     @RequestMapping(method=GET,value="/calculator/add/{num1}/{num2}")
     public String summationTwoNumbers(@PathVariable("num1") String num1, @PathVariable("num2") String num2) throws Exception{
-        log.info("controller inputs:"+num1);
         String result = new Summation().sum(num1,num2);
-        log.info("controller result :"+result);
-
         return result;
-//        return new Summation().sum(num1,num2);
     }
     @RequestMapping(method=GET,value="/calculator/add/{num1}")
     public String summationOneNumber(@PathVariable("num1") String num1) throws Exception{

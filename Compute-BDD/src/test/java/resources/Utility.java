@@ -34,7 +34,7 @@ public class Utility {
         try {
             url = "http://localhost:8080/";
             url = url.concat("calculator/add/").concat(number1).concat("/").concat(number2);
-            log.info("utility url :"+url);
+            log.info("Sending the request - url: "+url);
             return restTemplate.getForObject(url, String.class);
         }
         catch(Exception e){
@@ -45,6 +45,7 @@ public class Utility {
         try {
             url = "http://localhost:8080/";
             url = url.concat("calculator/add/").concat(number1);
+            log.info("Sending the request - url: "+url);
             return restTemplate.getForObject(url , String.class);
         }
         catch(Exception e){
@@ -53,8 +54,10 @@ public class Utility {
     }
     public static String sendGetRequest(String number1,String number2,String number3) {
         try {
-            return restTemplate.getForObject(url + "/calculator/add/" + number1+ "/"+number2+ "/"+number3, String.class);
-        }
+            url = "http://localhost:8080/";
+            url = url.concat("calculator/add/").concat(number1).concat("/").concat(number2).concat("/").concat(number3);
+            log.info("Sending the request - url: "+url);
+            return restTemplate.getForObject(url, String.class);        }
         catch(Exception e){
             return e.getMessage();
         }
